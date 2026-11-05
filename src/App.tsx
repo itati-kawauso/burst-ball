@@ -121,7 +121,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden bg-slate-950 text-slate-100 flex flex-col items-center justify-center font-sans select-none">
+    <div className="relative w-full h-full min-h-screen min-h-[100dvh] overflow-hidden bg-slate-950 text-slate-100 flex flex-col items-center justify-center font-sans select-none">
       {/* Central 60fps Physics Arena */}
       <div className="relative w-full h-full max-w-2xl max-h-[960px] flex flex-col bg-[#070914] shadow-2xl">
         <GameCanvas

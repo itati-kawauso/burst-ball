@@ -26,22 +26,37 @@ export const GameCanvas: React.FC<GameCanvasProps> = ({
     clientY: 0,
   });
 
-  // Handle Resize
+  // Handle Resize with robust fallback dimensions and ResizeObserver
   const handleResize = useCallback(() => {
     if (!containerRef.current || !canvasRef.current) return;
-    const { clientWidth, clientHeight } = containerRef.current;
+    const rect = containerRef.current.getBoundingClientRect();
+    const rawW = containerRef.current.clientWidth || rect.width || window.innerWidth || 600;
+    const rawH = containerRef.current.clientHeight || rect.height || window.innerHeight || 780;
+    const clientWidth = Math.max(280, Math.floor(rawW));
+    const clientHeight = Math.max(380, Math.floor(rawH));
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
-    canvasRef.current.width = clientWidth * dpr;
-    canvasRef.current.height = clientHeight * dpr;
+    canvasRef.current.width = Math.floor(clientWidth * dpr);
+    canvasRef.current.height = Math.floor(clientHeight * dpr);
 
     physics.resize(clientWidth, clientHeight);
   }, [physics]);
 
   useEffect(() => {
     handleResize();
+    const container = containerRef.current;
+    let ro: ResizeObserver | null = null;
+    if (container && typeof ResizeObserver !== 'undefined') {
+      ro = new ResizeObserver(() => {
+        handleResize();
+      });
+      ro.observe(container);
+    }
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    return () => {
+      if (ro) ro.disconnect();
+      window.removeEventListener('resize', handleResize);
+    };
   }, [handleResize]);
 
   // Input event listeners
