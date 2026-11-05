@@ -1,0 +1,6 @@
+{
+  "name": "Burst Chamber - 3秒爆発アクションパズル",
+  "description": "3秒ごとに猛烈に跳ね回る玉を陣地で受け止め、スコアサークルへ誘導して天井オーバーを防ぐ落ち物アクション物理パズルゲーム。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
