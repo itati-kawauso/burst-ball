@@ -1,20 +1,42 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <title>Burst Chamber - 3秒爆発アクションパズル</title>
     <meta name="description" content="3秒ごとに猛烈に跳ね回る玉を陣地で受け止め、スコアサークルへ誘導して天井オーバーを防ぐ落ち物アクション物理パズルゲーム。" />
+    <meta name="keywords" content="Burst Chamber, 落ち物パズル, アクションパズル, 物理演算, HTML5ゲーム, Webブラウザゲーム" />
+    <meta name="theme-color" content="#070914" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Burst Chamber" />
+
+    <!-- Favicon (Inline SVG for instant 0-dependency load on GitHub Pages) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='%23070914' stroke='%2338bdf8' stroke-width='7' stroke-dasharray='10 6'/%3E%3Ccircle cx='50' cy='50' r='28' fill='none' stroke='%230284c7' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='14' fill='%23f97316' stroke='%23fb923c' stroke-width='3'/%3E%3C/svg%3E" />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="Burst Chamber - 3秒爆発アクションパズル" />
     <meta property="og:description" content="3秒ごとに猛烈に跳ね回る玉を陣地で受け止め、スコアサークルへ誘導して天井オーバーを防ぐ落ち物アクション物理パズルゲーム。" />
-    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Burst Chamber" />
+    <meta property="og:locale" content="ja_JP" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Burst Chamber - 3秒爆発アクションパズル" />
+    <meta name="twitter:description" content="3秒ごとに猛烈に跳ね回る玉を陣地で受け止め、スコアサークルへ誘導して天井オーバーを防ぐ落ち物アクション物理パズルゲーム。" />
+
+    <!-- Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet" />
   </head>
-  <body>
+  <body class="bg-slate-950 overflow-hidden select-none">
     <div id="root"></div>
+    <noscript>
+      <div style="padding: 24px; color: #f8fafc; background: #0f172a; font-family: sans-serif; text-align: center; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h1 style="color: #38bdf8; margin-bottom: 12px;">Burst Chamber</h1>
+        <p>このゲームをプレイするにはJavaScriptを有効にしてください。</p>
+      </div>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
